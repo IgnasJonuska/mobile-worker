@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+@orange-color: #F08900;
+@light-gray-color: #F3F3F4;
+@gray-color: #A1A1A1;
+@border-radius: 4px;
+
+html, body {
+    height: 100%;
+    background-color: @light-gray-color;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto;
+}
+
+.fourteen-font {
+    font-size: 14px;
+}
+
+.twelve-font {
+    font-size: 12px;
+}
+
+.round-border {
+    border-radius: @border-radius;
+}
+
