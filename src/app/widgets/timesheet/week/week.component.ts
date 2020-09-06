@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ApprovalState } from 'src/app/models/approval-state';
+import { CalendarService } from '../../../services/calendar/calendar.service';
 
 @Component({
   selector: 'app-week',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeekComponent implements OnInit {
 
-  constructor() { }
+  @Input() date: Date;
+  @Input() approvalState: ApprovalState;
+  @Input() selectedDay: Date;
 
-  ngOnInit(): void {
+  @Output() daySelected = new EventEmitter<Date>();
+
+  constructor(public calendarService: CalendarService) { }
+
+  ngOnInit() {
+  }
+
+  selectDay = () => {
+    this.daySelected.emit(this.date);
   }
 
 }

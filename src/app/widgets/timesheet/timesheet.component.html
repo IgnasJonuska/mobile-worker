@@ -3,6 +3,10 @@
         <app-timesheet-header></app-timesheet-header>
     </div>
     <div class="calendar-container">
+        <!-- <div *ngFor="let dayReport of weekReports">    
+            <app-week [date]="dayReport.date" [selectedDay]="selectedDay"
+            [status]="dayReport.status" (daySelected)="onSelectedDate($event)"></app-week>
+        </div> -->
         <app-week></app-week>
     </div>
     <hr>
