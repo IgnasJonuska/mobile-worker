@@ -6,7 +6,6 @@ import { TimesheetComponent } from './widgets/timesheet/timesheet.component';
 const routes: Routes = [
   { path: '', component:TimesheetComponent },
   { path: 'add-task', component: AddTaskComponent },
-  // { path: 'timesheet', component: TimesheetComponent }
 ];
 
 @NgModule({

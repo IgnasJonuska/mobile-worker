@@ -1,20 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { WidgetsModule } from './widgets/widgets.module';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddTaskComponent } from './fake-pages/add-task/add-task.component';
-import { TimesheetComponent } from './widgets/timesheet/timesheet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddTaskComponent,
-    TimesheetComponent
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    WidgetsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
