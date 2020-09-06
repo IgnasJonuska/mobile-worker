@@ -9,7 +9,7 @@ export class AddTaskComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

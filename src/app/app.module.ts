@@ -3,15 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddTaskComponent } from './mocked-pages/add-task/add-task.component';
-import { TimesheetPageComponent } from './mocked-pages/timesheet/timesheet.component';
-
+import { AddTaskComponent } from './fake-pages/add-task/add-task.component';
+import { TimesheetComponent } from './widgets/timesheet/timesheet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTaskComponent,
-    TimesheetPageComponent
+    TimesheetComponent
   ],
   imports: [
     BrowserModule,

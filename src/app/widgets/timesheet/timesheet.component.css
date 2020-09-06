@@ -1,0 +1,48 @@
+@import '../../../styles.css';
+
+.timesheet-container {
+  overflow: hidden;
+  padding: 15px 15px 0px 15px;
+  border: 2px solid #d2d2d2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timesheet-container, .timesheet-container > div, .timesheet-container .group-container {
+  width: 316px;
+  background-color: white;
+}
+
+.timesheet-header-container {
+  margin-bottom: 15px;
+}
+
+.add-task-button {
+    width: 100%;
+    background-color: #F08900;
+    font-style: Roboto;
+    color: white;
+}
+
+.timesheet-container, .timesheet-container > div, .timesheet-container .group-container {
+  width: 300px;
+  background-color: white;
+}
+
+.add-task-button {
+  width: 100%;
+}
+
+.timesheet-button-padding {
+  padding-right: 0px;
+}
+
+
+.add-task-button-container {
+  /* height: 100px; */
+  padding: 15px;
+  margin-left: -15px;
+  background-color: #F3F3F4!important;
+}
