@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-@orange-color: #F08900;
-@light-gray-color: #F3F3F4;
-@gray-color: #A1A1A1;
 
-html, body {
+/* @orange-color: #F08900;
+@light-gray-color: #F3F3F4;
+@gray-color: #A1A1A1; */
+
+html,
+body {
     height: 100%;
     background-color: #F3F3F4;
     font-size: 16px;
@@ -25,4 +27,8 @@ body {
 
 .round-border {
     border-radius: 4px;
+}
+
+.task-group-font {
+    color: #A1A1A1;
 }

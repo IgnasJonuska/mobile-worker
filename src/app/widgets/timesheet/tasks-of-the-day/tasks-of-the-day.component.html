@@ -1,6 +1,20 @@
 <div class="tasks-container">
-    <div class="round-border">
-        <p>{{tasks}}</p>
-        <p>t</p>
+    <div class="tasks-header round-border">
+        <span>{{groupName}}</span>
+        <span *ngIf="taskGroupType == taskTypes.WorkHours" class="pull-right font-12">(workStart:workEnd)</span>
+    </div>
+    <div>
+        <span class="task-group-font font-12">Type</span>
+        <span *ngIf="taskGroupType == taskTypes.WorkHours" class="task-group-font pull-right font-12">Duration</span>
+        <span *ngIf="taskGroupType == taskTypes.AdditionalHours" class="task-group-font pull-right font-12">Amount</span>
+        <span *ngIf="taskGroupType == taskTypes.Expenses" class="task-group-font font-12">Quantity</span>
+        <span *ngIf="taskGroupType == taskTypes.Expenses" class="task-group-font pull-right font-12">Amount</span>
+    </div>
+    <div *ngFor="let task of tasks" class="font-12">
+        <div>
+            <span *ngIf="taskTypes.WorkHours">{{task.amount}}</span>
+            <span *ngIf="taskTypes.Expenses">{{task.amount}}</span>
+            <span *ngIf="taskTypes.AdditionalHours">{{task.amount}}</span>
+        </div>
     </div>
 </div>

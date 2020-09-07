@@ -12,9 +12,9 @@
         <input type="submit" class="go-to-timesheet-button" style="border:none;" value="GO TO TIMESHEET" />
     </div>
     <div class="tasks-container">
-        <app-tasks-of-the-day></app-tasks-of-the-day>
-        <app-tasks-of-the-day></app-tasks-of-the-day>
-        <app-tasks-of-the-day></app-tasks-of-the-day>
+        <app-tasks-of-the-day groupName="Hours" [tasks]="workHoursTasks" [taskGroupType]="workEventType.WorkHours" [workStart]="workDayStart" [workEnd]="workDayEnd"></app-tasks-of-the-day>
+        <app-tasks-of-the-day groupName="Expenses" [tasks]="expensesTasks" [taskGroupType]="workEventType.Expenses"></app-tasks-of-the-day>
+        <app-tasks-of-the-day groupName="Additional hours" [tasks]="additionalHoursTasks" [taskGroupType]="workEventType.AdditionalHours"></app-tasks-of-the-day>
     </div>
     <div class="add-task-button-container">
         <button class="add-task-button round-border" ng-click="/add-task">ADD TASK</button>
