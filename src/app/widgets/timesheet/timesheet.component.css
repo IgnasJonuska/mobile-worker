@@ -7,6 +7,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: Roboto;
 }
 
 .timesheet-container,
@@ -34,10 +35,6 @@
     background-color: white;
 }
 
-.add-task-button {
-    width: 100%;
-}
-
 .timesheet-button-padding {
     padding-right: 0px;
 }
@@ -47,4 +44,18 @@
     padding: 15px;
     margin-left: -15px;
     background-color: #F3F3F4!important;
+}
+
+.selected-day-go-to-timesheet-container {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: Roboto;
+}
+
+.go-to-timesheet-button {
+    color: #F08900;
+    padding: 0;
+    border: none;
+    background: none;
+    float: right;
 }
