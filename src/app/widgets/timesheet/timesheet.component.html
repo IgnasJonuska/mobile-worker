@@ -1,15 +1,12 @@
 <div class="timesheet-container round-border">
     <div class="timesheet-header-container">
-        <app-timesheet-header></app-timesheet-header>
+        <app-timesheet-header [selectedDay]="selectedDay"></app-timesheet-header>
     </div>
     <div class="calendar-container">
-        <!-- <div *ngFor="let dayReport of weekReports">    
-            <app-week [date]="dayReport.date" [selectedDay]="selectedDay"
-            [status]="dayReport.status" (daySelected)="onSelectedDate($event)"></app-week>
-        </div> -->
-        <app-week></app-week>
+        <div *ngFor="let dayReport of weekReports">
+            <app-week [date]="dayReport.date" [selectedDay]="selectedDay" [approvalState]="dayReport.approvalState"></app-week>
+        </div>
     </div>
-    <hr>
     <div class="tasks-container">
         <app-tasks-of-the-day></app-tasks-of-the-day>
     </div>

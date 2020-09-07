@@ -1,5 +1,4 @@
 <div>
-    <!-- <strong>{{selectedDay | monthYear}}</strong> -->
-    <strong>September 2020</strong>
+    <strong>{{selectedDay | date : "MMMM yyyy"}}</strong>
     <span class="today-icon clickable-hover" (click)="selectToday()"><i class="material-icons">calendar_today</i></span>
 </div>

@@ -30,14 +30,22 @@ export class TimesheetComponent implements OnInit {
   ngOnInit() {
     const today = new Date();
     const firstDayToDisplay = new Date(new Date().setDate(new Date().getDate() - 6));
+    console.log('firstDayToDisplay ', firstDayToDisplay)
+
+    this.eventService.getReportsToDisplay(firstDayToDisplay, today).subscribe(data => {
+      this.weekReports = data;
+      this.onSelectedDate(today);
+    });
+
   }
 
   onSelectedDate = (selectedDay: Date) => {
     this.selectedDay = selectedDay;
     const currentDayReport = this.weekReports.find(r => this.calendarService.isSameDay(r.date, selectedDay));
+    console.log('weekReports', this.weekReports)
 
-    this.workHoursTasks = this.taskService.getTimesheetEventsByType(currentDayReport.tasks, EventType.WorkHours);
-    this.additionalHoursTasks = this.taskService.getTimesheetEventsByType(currentDayReport.tasks, EventType.AdditionalHours);
-    this.expensesTasks = this.taskService.getTimesheetEventsByType(currentDayReport.tasks, EventType.Expenses);
+    // this.workHoursTasks = this.taskService.getTimesheetEventsByType(currentDayReport.tasks, EventType.WorkHours);
+    // this.additionalHoursTasks = this.taskService.getTimesheetEventsByType(currentDayReport.tasks, EventType.AdditionalHours);
+    // this.expensesTasks = this.taskService.getTimesheetEventsByType(currentDayReport.tasks, EventType.Expenses);
   }
 }
