@@ -1,0 +1,12 @@
+@import '../../../../styles.css';
+.week-container {
+    width: 46px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+}
+
+.day-number {
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
