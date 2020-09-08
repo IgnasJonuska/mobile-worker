@@ -18,3 +18,7 @@
     /* float: none; */
     display: inline-block;
 }
+
+.right-margin {
+    margin-right: 5px;
+}

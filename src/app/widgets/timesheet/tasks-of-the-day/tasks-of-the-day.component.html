@@ -5,16 +5,19 @@
     </div>
     <div>
         <span class="task-group-font font-12">Type</span>
-        <span *ngIf="taskGroupType == taskTypes.WorkHours" class="task-group-font pull-right font-12">Duration</span>
+        <!-- <span *ngIf="taskGroupType == taskTypes.WorkHours" class="task-group-font pull-right font-12">Duration</span>
         <span *ngIf="taskGroupType == taskTypes.AdditionalHours" class="task-group-font pull-right font-12">Amount</span>
         <span *ngIf="taskGroupType == taskTypes.Expenses" class="task-group-font font-12">Quantity</span>
-        <span *ngIf="taskGroupType == taskTypes.Expenses" class="task-group-font pull-right font-12">Amount</span>
+        <span *ngIf="taskGroupType == taskTypes.Expenses" class="task-group-font pull-right font-12">Amount</span> -->
+        <span class="task-group-font pull-right font-12">{{totalName}}</span>
     </div>
     <div *ngFor="let task of tasks" class="font-12">
         <div>
-            <span *ngIf="taskTypes.WorkHours">{{task.amount}}</span>
-            <span *ngIf="taskTypes.Expenses">{{task.amount}}</span>
-            <span *ngIf="taskTypes.AdditionalHours">{{task.amount}}</span>
+            <span>{{task.name}}</span>
+            <!-- <<span *ngIf="task.taskTypes.WorkHours">{{task.amount}}</span>
+            <span *ngIf="task.taskTypes.Expenses">{{task.amount}}</span>
+            <span *ngIf="task.taskTypes.AdditionalHours">{{task.amount}}</span>> -->
+            <span class="right-margin pull-right">{{task.amount}}</span>
         </div>
     </div>
 </div>

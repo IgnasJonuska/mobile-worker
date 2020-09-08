@@ -41,15 +41,19 @@ export class TaskService {
     const dayEvents = this.getEventsFromTasks(dayTasks);
     switch (type) {
       case EventType.AdditionalHours:
+        console.log('addit');
         const additionalHoursEvents: Array<TimesheetTaskEvent> = dayEvents.filter(e => e.isAdditionalHoursEventType).map(e => {
           return {
             name: e.eventTypeName,
-            amount: Math.abs(e.end.getTime() - e.start.getTime())
+            amount: 0
+            // (Math.abs(e.end.getTime() - e.start.getTime())) / millisecondsPerHour
+            // Math.abs(e.end.getTime() - e.start.getTime())
           };
         });
         return additionalHoursEvents;
 
       case EventType.Expenses:
+        console.log('exp');
         const expensesEvents: Array<TimesheetTaskEvent> = dayEvents.filter(e => e.isExpenseType).map(e => {
           return {
             name: e.eventTypeName,
@@ -60,10 +64,14 @@ export class TaskService {
         return expensesEvents;
 
       case EventType.WorkHours:
+        console.log('workh');
+        var millisecondsPerHour = 1000 * 60 * 60;
         const workHoursEvents: Array<TimesheetTaskEvent> = dayEvents.filter(e => e.isHoursEventType).map(e => {
           return {
             name: e.eventTypeName,
-            amount: Math.abs(e.end.getTime() - e.start.getTime())
+            // amount: Math.floor((Math.abs(e.end.getTime() - e.start.getTime())/ 1000) / 60)
+            amount: (Math.abs(e.end.getTime() - e.start.getTime())) / millisecondsPerHour
+            // moment.utc(moment(e.end).diff(moment(e.start))).format("mm")
           };
         });
         return workHoursEvents;
