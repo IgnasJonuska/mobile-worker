@@ -1,6 +1,6 @@
 <div class="week-container clickable-hover" (click)="selectDay()">
-    <p class="font-12">{{date | date: 'EEE'}}</p>
-    <p class="day-number round-border">{{date.getDate()}}</p>
+    <p class="font-12" [class.gray-font]="calendarService.weekendCheck(date)">{{date | date: 'EEE'}}</p>
+    <p [class.today-border]="calendarService.isToday(date)" [class.selected-day]="calendarService.isSameDay(date, selectedDay)" class="day-number round-border" [class.gray-font]="calendarService.weekendCheck(date)">{{date.getDate()}}</p>
     <p class="font-12"></p>
-    <p class="font-12">{{approvalState}}</p>
+    <p class="font-12 ">{{approvalState}}</p>
 </div>

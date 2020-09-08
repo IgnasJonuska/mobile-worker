@@ -24,8 +24,8 @@ export class TimesheetComponent implements OnInit {
   workEventType = EventType;
 
   constructor(private eventService: EventService,
-              private taskService: TaskService,
-              private calendarService: CalendarService) { }
+    private taskService: TaskService,
+    private calendarService: CalendarService) { }
 
   ngOnInit() {
     const today = new Date();
@@ -42,10 +42,16 @@ export class TimesheetComponent implements OnInit {
   onSelectedDate = (selectedDay: Date) => {
     this.selectedDay = selectedDay;
     const currentDayReport = this.weekReports.find(r => this.calendarService.isSameDay(r.date, selectedDay));
-    console.log('weekReports', this.weekReports)
 
     this.workHoursTasks = this.taskService.getTimesheetEventsByType(currentDayReport.tasks, EventType.WorkHours);
     this.additionalHoursTasks = this.taskService.getTimesheetEventsByType(currentDayReport.tasks, EventType.AdditionalHours);
     this.expensesTasks = this.taskService.getTimesheetEventsByType(currentDayReport.tasks, EventType.Expenses);
+    console.log('additionalHoursTasks', this.additionalHoursTasks)
+
+    if (currentDayReport.tasks.length !== 0) {
+      const workDayStartAndEndHours = this.taskService.getWorkStartEnd(currentDayReport.tasks);
+      this.workDayStart = workDayStartAndEndHours[0];
+      this.workDayEnd = workDayStartAndEndHours[1];
+    }
   }
 }

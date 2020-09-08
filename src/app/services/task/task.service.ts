@@ -28,7 +28,7 @@ export class TaskService {
   getWorkStartEnd = (dayTasks: Array<Task>): [Date, Date] => {
     const dayWorkHoursEvents = this.getEventsFromTasks(dayTasks).filter(e => e.isHoursEventType);
     const dayStart = new Date(Math.min.apply(null, dayWorkHoursEvents.map(e => e.start)));
-    const dayEnd = new Date(Math.min.apply(null, dayWorkHoursEvents.map(e => e.end)));
+    const dayEnd = new Date(Math.max.apply(null, dayWorkHoursEvents.map(e => e.end)));
 
     return [dayStart, dayEnd];
   }
@@ -45,7 +45,7 @@ export class TaskService {
         const additionalHoursEvents: Array<TimesheetTaskEvent> = dayEvents.filter(e => e.isAdditionalHoursEventType).map(e => {
           return {
             name: e.eventTypeName,
-            amount: 0
+            amount: 0 //TODO
             // (Math.abs(e.end.getTime() - e.start.getTime())) / millisecondsPerHour
             // Math.abs(e.end.getTime() - e.start.getTime())
           };
