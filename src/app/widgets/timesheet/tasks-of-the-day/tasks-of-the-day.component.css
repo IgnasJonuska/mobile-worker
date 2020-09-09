@@ -18,3 +18,17 @@
     /* float: none; */
     display: inline-block;
 }
+
+.center-align {
+    left: 50%;
+    top: 50%;
+    align-self: center;
+}
+
+.right-margin {
+    margin-right: 5px;
+}
+
+.left-margin {
+    margin-left: 5px;
+}

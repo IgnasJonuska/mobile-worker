@@ -1,20 +1,20 @@
 <div class="tasks-container">
     <div class="tasks-header round-border">
         <span>{{groupName}}</span>
-        <span *ngIf="taskGroupType == taskTypes.WorkHours" class="pull-right font-12">(workStart:workEnd)</span>
+        <span *ngIf="taskGroupType == taskTypes.WorkHours" class="pull-right font-12 gray-font">({{workStart| date:'HH:mm'}}:{{workEnd | date:'HH:mm'}})</span>
     </div>
-    <div>
-        <span class="task-group-font font-12">Type</span>
-        <span *ngIf="taskGroupType == taskTypes.WorkHours" class="task-group-font pull-right font-12">Duration</span>
-        <span *ngIf="taskGroupType == taskTypes.AdditionalHours" class="task-group-font pull-right font-12">Amount</span>
-        <span *ngIf="taskGroupType == taskTypes.Expenses" class="task-group-font font-12">Quantity</span>
-        <span *ngIf="taskGroupType == taskTypes.Expenses" class="task-group-font pull-right font-12">Amount</span>
+    <div class="gray-font font-12">
+        <span>Type</span>
+        <span *ngIf="taskGroupType == taskTypes.Expenses" class="center-align">Quantity</span>
+        <span class="pull-right">{{totalName}}</span>
     </div>
     <div *ngFor="let task of tasks" class="font-12">
         <div>
-            <span *ngIf="taskTypes.WorkHours">{{task.amount}}</span>
-            <span *ngIf="taskTypes.Expenses">{{task.amount}}</span>
-            <span *ngIf="taskTypes.AdditionalHours">{{task.amount}}</span>
+            <span>{{task.name}}</span>
+            <span>{{task.quantity}}</span>
+            <span *ngIf="taskGroupType == taskTypes.WorkHours" class="right-margin pull-right">{{task.amount}}</span>
+            <span *ngIf="taskGroupType == taskTypes.Expenses" class="right-margin pull-right">{{task.amount}}</span>
+            <span *ngIf="taskGroupType == taskTypes.AdditionalHours" class="right-margin pull-right">{{task.amount}}</span>
         </div>
     </div>
 </div>

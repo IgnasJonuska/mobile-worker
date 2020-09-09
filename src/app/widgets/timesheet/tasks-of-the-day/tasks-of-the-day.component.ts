@@ -15,6 +15,7 @@ export class TasksOfTheDayComponent implements OnInit {
   @Input() tasks: Array<TimesheetTaskEvent> = [];
   @Input() taskGroupType: EventType;
   @Input() groupName: string;
+  @Input() totalName: string;
 
   taskTypes = EventType;
 

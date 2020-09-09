@@ -10,3 +10,12 @@
     margin-top: 9px;
     margin-bottom: 9px;
 }
+
+.selected-day {
+    background-color: #F08900;
+    color: white;
+}
+
+.today-border {
+    border: 1px solid #F08900;
+}

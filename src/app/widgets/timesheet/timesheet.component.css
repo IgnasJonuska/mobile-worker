@@ -35,6 +35,11 @@
     background-color: white;
 }
 
+.calendar-container {
+    height: 110px;
+    border-bottom: 2px solid #F3F3F4;
+}
+
 .timesheet-button-padding {
     padding-right: 0px;
 }

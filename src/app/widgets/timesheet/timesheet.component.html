@@ -1,10 +1,10 @@
 <div class="timesheet-container round-border">
     <div class="timesheet-header-container">
-        <app-timesheet-header [selectedDay]="selectedDay"></app-timesheet-header>
+        <app-timesheet-header [selectedDay]="selectedDay" (calendarIconSelected)=onSelectedDate($event)></app-timesheet-header>
     </div>
     <div class="calendar-container">
         <div *ngFor="let dayReport of weekReports">
-            <app-week [date]="dayReport.date" [selectedDay]="selectedDay" [approvalState]="dayReport.approvalState"></app-week>
+            <app-week [date]="dayReport.date" [selectedDay]="selectedDay" (daySelected)=onSelectedDate($event) [approvalState]="dayReport.approvalState"></app-week>
         </div>
     </div>
     <div class="selected-day-go-to-timesheet-container">
@@ -12,9 +12,9 @@
         <input type="submit" class="go-to-timesheet-button" style="border:none;" value="GO TO TIMESHEET" />
     </div>
     <div class="tasks-container">
-        <app-tasks-of-the-day groupName="Hours" [tasks]="workHoursTasks" [taskGroupType]="workEventType.WorkHours" [workStart]="workDayStart" [workEnd]="workDayEnd"></app-tasks-of-the-day>
-        <app-tasks-of-the-day groupName="Expenses" [tasks]="expensesTasks" [taskGroupType]="workEventType.Expenses"></app-tasks-of-the-day>
-        <app-tasks-of-the-day groupName="Additional hours" [tasks]="additionalHoursTasks" [taskGroupType]="workEventType.AdditionalHours"></app-tasks-of-the-day>
+        <app-tasks-of-the-day groupName="Hours" totalName="Duration" [tasks]="workHoursTasks" [taskGroupType]="workEventType.WorkHours" [workStart]="workDayStart" [workEnd]="workDayEnd"></app-tasks-of-the-day>
+        <app-tasks-of-the-day groupName="Expenses" totalName="Total" [tasks]="expensesTasks" [taskGroupType]="workEventType.Expenses"></app-tasks-of-the-day>
+        <app-tasks-of-the-day groupName="Additional hours" totalName="Amount" [tasks]="additionalHoursTasks" [taskGroupType]="workEventType.AdditionalHours"></app-tasks-of-the-day>
     </div>
     <div class="add-task-button-container">
         <button class="add-task-button round-border" ng-click="/add-task">ADD TASK</button>
