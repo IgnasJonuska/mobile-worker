@@ -9,14 +9,14 @@
     </div>
     <div class="selected-day-go-to-timesheet-container">
         <span>{{selectedDay | date: 'EEEE'}} {{selectedDay | date: 'dd.MM.yyyy'}}</span>
-        <input type="submit" class="go-to-timesheet-button" style="border:none;" value="GO TO TIMESHEET" />
+        <button mat-button class="go-to-timesheet-button" routerLink="/dummy-timesheet">GO TO TIMESHEET</button>
     </div>
     <div class="tasks-container">
-        <app-tasks-of-the-day groupName="Hours" totalName="Duration" [tasks]="workHoursTasks" [taskGroupType]="workEventType.WorkHours" [workStart]="workDayStart" [workEnd]="workDayEnd"></app-tasks-of-the-day>
-        <app-tasks-of-the-day groupName="Expenses" totalName="Total" [tasks]="expensesTasks" [taskGroupType]="workEventType.Expenses"></app-tasks-of-the-day>
-        <app-tasks-of-the-day groupName="Additional hours" totalName="Amount" [tasks]="additionalHoursTasks" [taskGroupType]="workEventType.AdditionalHours"></app-tasks-of-the-day>
+        <app-tasks-of-the-day iconName="schedule" groupName="Hours" totalName="Duration" [tasks]="workHoursTasks" [taskGroupType]="workEventType.WorkHours" [workStart]="workDayStart" [workEnd]="workDayEnd"></app-tasks-of-the-day>
+        <app-tasks-of-the-day iconName="attach_money" groupName="Expenses" totalName="Total" [tasks]="expensesTasks" [taskGroupType]="workEventType.Expenses"></app-tasks-of-the-day>
+        <app-tasks-of-the-day iconName="timelapse" groupName="Additional hours" totalName="Amount" [tasks]="additionalHoursTasks" [taskGroupType]="workEventType.AdditionalHours"></app-tasks-of-the-day>
     </div>
     <div class="add-task-button-container">
-        <button class="add-task-button round-border" ng-click="/add-task">ADD TASK</button>
+        <button class="add-task-button round-border" routerLink="/add-task">ADD TASK</button>
     </div>
 </div>

@@ -1,6 +1,7 @@
 <div class="tasks-container">
     <div class="tasks-header round-border">
-        <span>{{groupName}}</span>
+        <i class="material-icons">{{iconName}}</i>
+        <span>&nbsp;{{groupName}}</span>
         <span *ngIf="taskGroupType == taskTypes.WorkHours" class="pull-right font-12 gray-font">({{workStart| date:'HH:mm'}}:{{workEnd | date:'HH:mm'}})</span>
     </div>
     <div class="gray-font font-12">
