@@ -4,7 +4,7 @@
     </div>
     <div class="calendar-container">
         <div *ngFor="let dayReport of weekReports">
-            <app-week [date]="dayReport.date" [selectedDay]="selectedDay" (daySelected)=onSelectedDate($event) [approvalState]="dayReport.approvalState"></app-week>
+            <app-week [date]="dayReport.date" [selectedDay]="selectedDay" (daySelected)=onSelectedDate($event) [approvalState]="dayReport.approvalState" [timeWorked]="dayReport.timeWorked"></app-week>
         </div>
     </div>
     <div class="selected-day-go-to-timesheet-container">
