@@ -24,8 +24,8 @@ export class EventService {
       });
       return response;
     }),
-    // map(response => response.filter(r => this.calendarService.isBiggerOrEqualDay(r.date, startDate)
-    //   && this.calendarService.isLesserOrEqualDay(r.date, endDate))),
+    map(response => response.filter(r => this.calendarService.isLaterDay(r.date, startDate)
+       && this.calendarService.isEarlierDay(r.date, endDate))),
     map(response => {
       response.forEach(dayReport => {
         dayReport.firstTaskStart = new Date(dayReport.firstTaskStart);
@@ -38,9 +38,7 @@ export class EventService {
             e.end = new Date(e.end);
           });
         });
-        // dayReport.minutesWorked = this.taskService.getDayMinutesWorked(dayReport.tasks);
       });
-      console.log('response', response);
       return response;
     }));
 }

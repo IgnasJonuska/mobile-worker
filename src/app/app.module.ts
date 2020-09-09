@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddTaskComponent } from './fake-pages/add-task/add-task.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DummyTimesheetComponent } from './fake-pages/dummy-timesheet/dummy-timesheet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    DummyTimesheetComponent
   ],
   imports: [
     BrowserModule,

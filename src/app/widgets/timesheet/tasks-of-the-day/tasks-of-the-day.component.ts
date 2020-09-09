@@ -16,6 +16,7 @@ export class TasksOfTheDayComponent implements OnInit {
   @Input() taskGroupType: EventType;
   @Input() groupName: string;
   @Input() totalName: string;
+  @Input() iconName: string;
 
   taskTypes = EventType;
 
