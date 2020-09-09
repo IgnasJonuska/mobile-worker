@@ -15,7 +15,6 @@
 }
 
 .no-float {
-    /* float: none; */
     display: inline-block;
 }
 

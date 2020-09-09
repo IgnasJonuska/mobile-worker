@@ -12,6 +12,7 @@ export class WeekComponent implements OnInit {
   @Input() date: Date;
   @Input() approvalState: ApprovalState;
   @Input() selectedDay: Date;
+  @Input() workTime: number;
 
   @Output() daySelected = new EventEmitter<Date>();
 

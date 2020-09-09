@@ -29,7 +29,7 @@ export class TimesheetComponent implements OnInit {
 
   ngOnInit() {
     const today = new Date();
-    const firstDayToDisplay = new Date(new Date().setDate(new Date().getDate() - 6));
+    const firstDayToDisplay = new Date(new Date().setDate(new Date().getDate() - 7));
 
     this.eventService.getReportsToDisplay(firstDayToDisplay, today).subscribe(data => {
       this.weekReports = data;

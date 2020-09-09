@@ -8,5 +8,5 @@ export interface DayReport{
     lastTaskEnd: Date;
     status: ApprovalState;
     tasks: Array<Task>;
-    // minutesWorked: number;
+    timeWorked: number;
 }
